@@ -13,7 +13,7 @@
     "start": "npm run ts-node src/index.ts",
     "predevelop": "npm run db:migrate && npm run db:seed",
     "dev": "nodemon",
-    "lint": "eslint .",
+    "lint": "eslint src",
     "prettier": "./node_modules/.bin/prettier --write \"{src,knex}/**/*.ts\"",
     "pretest": "cross-env NODE_ENV=test npm run db:rollback:all && cross-env NODE_ENV=test npm run db:migrate",
     "pretest:CI": "cross-env NODE_ENV=test npm run db:migrate",
