@@ -1,4 +1,4 @@
-import { Id, RelationMappings, RelationMappingsThunk } from 'objection';
+import { Id, RelationMappings } from 'objection';
 import Base from './base';
 import { Battle } from './battle.model';
 
