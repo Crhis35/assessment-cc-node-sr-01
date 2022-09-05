@@ -22,7 +22,7 @@ export const config: Env = {
   dbFilename: process.env.DB_FILENAME || 'db.sqlite3',
   dbTestFilename: process.env.DB_TEST_FILENAME || 'db.test.sqlite3',
   knexDebug: process.env.KNEX_DEBUG === 'true',
-  port: 5001,
+  port: Number(process.env.APP_PORT) || 5000,
   defaultPage: 0,
   defaultPageSize: 10,
 };
