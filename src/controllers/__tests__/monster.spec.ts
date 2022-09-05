@@ -15,10 +15,8 @@ describe('MonsterController', () => {
     test('should list all monsters', async () => {
       const sampleSize = 3;
       const monsters = factories.monster.buildList(sampleSize);
-      const ids = await Promise.all(
-        monsters.map(
-          async ({ id, ...data }) => (await Monster.query().insert(data)).id
-        )
+      await Promise.all(
+        monsters.map(async (data) => (await Monster.query().insert(data)).id)
       );
 
       const response = await request(server).get('/monsters');
