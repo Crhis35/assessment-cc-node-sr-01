@@ -1,5 +1,5 @@
 import { Knex } from 'knex';
-import { Battle, Monster } from '../../src/models';
+import { Battle } from '../../src/models';
 
 export const up = (knex: Knex): Promise<void> =>
   knex.schema.createTable(Battle.tableName, (table: Knex.TableBuilder) => {
@@ -8,9 +8,9 @@ export const up = (knex: Knex): Promise<void> =>
     table.integer('winner');
     table.integer('monsterA');
     table.integer('monsterB');
-    table.foreign('winner').references('id').inTable(Monster.tableName);
-    table.foreign('monsterA').references('id').inTable(Monster.tableName);
-    table.foreign('monsterB').references('id').inTable(Monster.tableName);
+    table.foreign('winner');
+    table.foreign('monsterA');
+    table.foreign('monsterB');
   });
 
 export const down = (knex: Knex): Promise<void> =>
