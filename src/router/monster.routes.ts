@@ -7,7 +7,6 @@ const router = Router();
 const storage = multer.memoryStorage();
 const upload = multer({ storage });
 
-router.get('/', (req: Request, res: Response) => res.send('monsters'));
 router.post('/', MonsterController.create);
 router.post('/import', upload.single('monsters'), MonsterController.importCsv);
 router.get('/:id', MonsterController.get);
