@@ -8,9 +8,6 @@ export const up = (knex: Knex): Promise<void> =>
     table.integer('winner');
     table.integer('monsterA');
     table.integer('monsterB');
-    table.foreign('winner');
-    table.foreign('monsterA');
-    table.foreign('monsterB');
   });
 
 export const down = (knex: Knex): Promise<void> =>
