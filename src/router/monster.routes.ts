@@ -1,4 +1,4 @@
-import { Request, Response, Router } from 'express';
+import { Router } from 'express';
 import multer from 'multer';
 import { MonsterController } from '../controllers/monster.controller';
 
