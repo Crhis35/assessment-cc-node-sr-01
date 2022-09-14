@@ -7,7 +7,6 @@ import { Monster } from '../../models';
 
 const server = app.listen();
 
-beforeAll(() => jest.useFakeTimers());
 afterAll(() => server.close());
 
 describe('MonsterController', () => {

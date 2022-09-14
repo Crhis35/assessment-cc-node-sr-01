@@ -3,6 +3,7 @@ import { StatusCodes } from 'http-status-codes';
 import { DBError, Id, NotNullViolationError } from 'objection';
 import { Monster } from '../models';
 import csv from 'csvtojson';
+import { readFileSync } from 'fs';
 
 export const get = async (req: Request, res: Response): Promise<Response> => {
   const id: Id = req.params.id;
@@ -40,12 +41,12 @@ export const importCsv = async (
   req: Request,
   res: Response
 ): Promise<Response> => {
-  const content = req.file!.buffer.toString();
+  const content = readFileSync(req.file!.path, { encoding: 'utf-8' });
   const data = await csv().fromString(content);
   try {
     await Monster.query().insertGraph(data);
   } catch (e) {
-    if (e instanceof DBError || e instanceof NotNullViolationError) {
+    if (e instanceof NotNullViolationError || e instanceof DBError) {
       const message = 'Wrong data mapping.';
       return res.status(StatusCodes.BAD_REQUEST).json({ message });
     }

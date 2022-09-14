@@ -3,9 +3,7 @@ import multer from 'multer';
 import { MonsterController } from '../controllers/monster.controller';
 
 const router = Router();
-
-const storage = multer.memoryStorage();
-const upload = multer({ storage });
+const upload = multer({ dest: 'upload' });
 
 router.post('/', MonsterController.create);
 router.post('/import', upload.single('monsters'), MonsterController.importCsv);
