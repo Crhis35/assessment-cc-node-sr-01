@@ -17,6 +17,10 @@ describe('BattleController', () => {
   });
 
   describe('Battle', () => {
+    test('should fail when trying a battle of monsters with an undefined monster', async () => {
+      // @TODO
+    });
+
     test('should fail when trying a battle of monsters with an inexistent monster', async () => {
       // @TODO
     });
