@@ -91,7 +91,7 @@ describe('MonsterController', () => {
   });
 
   describe('Import CSV', () => {
-    test('should fail when trying a battle of monsters with an inexistent monster', () => {
+    test('should fail when importing csv file with an empty monster', () => {
       // @TODO
     });
 
