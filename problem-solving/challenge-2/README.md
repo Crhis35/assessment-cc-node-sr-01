@@ -12,12 +12,12 @@ Based on the explanation above, you will receive inputs like the examples below:
 Example 1:
 - Dice 1: 1
 - Dice 2: 2
-- Dice 2: 3
+- Dice 3: 3
 
 Example 2:
 - Dice 1: 4
 - Dice 2: 1
-- Dice 2: 4
+- Dice 3: 4
 
 Example 1:
 - Dice 1: 3
