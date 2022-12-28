@@ -18,7 +18,8 @@ describe('BattleController', () => {
 
   describe('Battle', () => {
     test('should fail when trying a battle of monsters with an undefined monster', async () => {
-      // @TODO
+      const response = await request(server).post('/battle/start-battle');
+      expect(response.status).toBe(StatusCodes.BAD_REQUEST);
     });
 
     test('should fail when trying a battle of monsters with an inexistent monster', async () => {

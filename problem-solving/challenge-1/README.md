@@ -6,15 +6,15 @@ You will receive an array of numbers, and your challenge is to calculate the fra
 
 You will receive an input like the one below:
 
-```
-[-4, 3, -9, 0, 4, 1]
+```sh
+[4, 3, -9, 0, 4, 1-]
 ```
 
 And with this, you should calculate the fractions of each type internally, as mentioned above.
 
 Your function should return an object like the example below:
 
-```
+```json
 {
     positives: 0.500000,
     negative: 0.333333,

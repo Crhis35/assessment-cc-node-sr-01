@@ -15,6 +15,15 @@ export class Monster extends Base {
   static tableName = 'monster';
 
   static get relationMappings(): RelationMappings {
-    return {};
+    return {
+      battles: {
+        relation: Base.HasManyRelation,
+        modelClass: Battle,
+        join: {
+          from: 'monster.id',
+          to: 'battle.monsterId',
+        },
+      },
+    };
   }
 }

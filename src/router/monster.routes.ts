@@ -5,6 +5,7 @@ import { MonsterController } from '../controllers/monster.controller';
 const router = Router();
 const upload = multer({ dest: 'upload' });
 
+router.get('/', MonsterController.list);
 router.post('/', MonsterController.create);
 router.post('/import', upload.single('monsters'), MonsterController.importCsv);
 router.get('/:id', MonsterController.get);

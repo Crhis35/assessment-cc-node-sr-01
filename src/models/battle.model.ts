@@ -11,6 +11,31 @@ export class Battle extends Base {
   static tableName = 'battle';
 
   static get relationMappings(): RelationMappings {
-    return {};
+    return {
+      monsterARelation: {
+        relation: Base.HasOneRelation,
+        modelClass: Battle,
+        join: {
+          from: 'battle.monsterA',
+          to: 'monster.id',
+        },
+      },
+      monsterBRelation: {
+        relation: Base.HasOneRelation,
+        modelClass: Battle,
+        join: {
+          from: 'battle.monsterB',
+          to: 'monster.id',
+        },
+      },
+      winnerRelation: {
+        relation: Base.HasOneRelation,
+        modelClass: Battle,
+        join: {
+          from: 'battle.winner',
+          to: 'monster.id',
+        },
+      },
+    };
   }
 }
